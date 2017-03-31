@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Juggernaut Arcana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shotcut icon" href="./images/jugg_arcana.ico">
+    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <style>
+        .frame {
+            display: flex;
+        }
+
+        .frame .demo {
+            margin-left: 50px;
+            position: relative;
+            width: 672px;
+            height: 821px;
+        }
+
+        .frame .demo div {
+            position: absolute;
+            width: 50%;
+            overflow: hidden;
+            transition: all 200ms;
+            height: 100%;
+        }
+
+        .frame .demo .left {
+            z-index: 2;
+        }
+
+        .frame .demo .left:hover {
+            width: 100%;
+        }
+
+        .frame .demo .right {
+            left: 50%;
+        }
+
+        .frame .demo .right:hover {
+            width: 100%;
+            left: 0;
+            z-index: 3;
+        }
+
+        .frame .demo .right img {
+            position: absolute;
+            right: 0;
+        }
+
+        main {
+            position: relative;
+            width: 672px;
+            height: 821px;
+        }
+
+        main div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #back-content div {
+            overflow: hidden;
+            transition: all 200ms;
+        }
+
+        #left-content,
+        #right-content,
+        #left-detect,
+        #right-detect {
+            width: 50%;
+        }
+
+        #left-content {}
+
+        #left-content.show {
+            width: 100%;
+        }
+
+        #left-content.show-index {
+            z-index: 9;
+        }
+
+        #right-content {
+            left: 50%;
+        }
+
+        #right-content img {
+            position: absolute;
+            right: 0;
+        }
+
+        #right-content.show {
+            width: 100%;
+            left: 0;
+        }
+
+        #right-content.show-index {
+            z-index: 9;
+        }
+
+        #detect-frame {
+            z-index: 99;
+        }
+
+        #right-detect {
+            left: 50%;
+        }
+
+        #mid-line {
+            width: 4px;
+            background-color: black;
+            left: calc(50% - 2px);
+            z-index: 10;
+        }
+
+        #mid-line.hide {
+            width: 0;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Juggernaut Arcana</h1><a href="../index.html">Go back</a>
+    <div class="frame">
+        <div>
+            <h2>Preview</h2>
+            <img src="./images/arcana.gif">
+        </div>
+        <div class="demo">
+            <h2>Demo</h2>
+            <div class="left">
+                <img src="./images/left.png">
+            </div>
+            <div class="right">
+                <img src="./images/right.png">
+            </div>
+        </div>
+        <div style="margin-left:50px;">
+            <h2>Demo 2</h2>
+            <main>
+                <div id="back-content">
+                    <div id="left-content"><img src="./images/left.png"></div>
+                    <div id="mid-line"></div>
+                    <div id="right-content"><img src="./images/right.png"></div>
+                </div>
+                <div id="detect-frame">
+                    <div id="left-detect"></div>
+                    <div id="right-detect"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
