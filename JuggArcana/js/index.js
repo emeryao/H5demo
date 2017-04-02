@@ -1,3 +1,4 @@
+"use strict";
 $(document).ready(() => {
     let duration = 200;
     $('#left-detect').on('mouseenter', () => {
