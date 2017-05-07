@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Beating Number</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./scripts/index.js"></script>
+    <style>
+        .bounceIn {
+            transform: scale3d(1.2, 1.2, 1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Beating Number</h1><a href="../index.html">Go back</a>
+    <main style="padding: 50px;">
+        <div style="padding:20px;font-size:30px;font-weight:bold;display: inline-block;transition: transform 100ms ease;">
+            <span id="num0">0</span>
+        </div>
+        <div>
+            <input type="number" id="next-input">
+            <input type="button" value="OK" id="btn">
+        </div>
+    </main>
+</body>
+
+</html>
