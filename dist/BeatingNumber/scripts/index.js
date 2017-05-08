@@ -1,15 +1,7 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 $(document).ready(() => {
     let digits = 2;
-    $('#btn').on('click', () => __awaiter(this, void 0, void 0, function* () {
+    $('#btn').on('click', async () => {
         let nextValue = $('#next-input').val();
         // let valueArr = nextValue.split('');
         // for (let i = digits - 1; i >= 0; i--) {
@@ -25,19 +17,17 @@ $(document).ready(() => {
             $(`#num0`).text(next);
             currentNum = parseInt($(`#num0`).text());
             $(`#num0`).parent().addClass('bounceIn');
-            yield sleep(50);
+            await sleep(50);
             $(`#num0`).parent().removeClass('bounceIn');
-            yield sleep(50);
-        }
-    }));
-});
-function applyInterm(ele, intermArray) {
-    return __awaiter(this, void 0, void 0, function* () {
-        for (let intern of intermArray) {
-            ele.text(intern);
-            yield sleep(500);
+            await sleep(50);
         }
     });
+});
+async function applyInterm(ele, intermArray) {
+    for (let intern of intermArray) {
+        ele.text(intern);
+        await sleep(500);
+    }
 }
 function getIntermNumbers(start, target) {
     let diff = target - start;
@@ -47,10 +37,8 @@ function getIntermNumbers(start, target) {
     }
     return intermArray;
 }
-function sleep(milliSec) {
-    return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((resolve, reject) => {
-            setTimeout(resolve, milliSec);
-        });
+async function sleep(milliSec) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, milliSec);
     });
 }
