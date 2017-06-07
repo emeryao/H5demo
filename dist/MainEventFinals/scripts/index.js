@@ -13,6 +13,17 @@ function onDrop(e) {
     console.log('data: ', data);
     applyTeam(JSON.parse(data), e.target);
 }
+function checkAsync() {
+    try {
+        // tslint:disable-next-line:no-eval
+        eval('(async () => ({}))()');
+        return true;
+    }
+    catch (e) {
+        console.log('async not supported');
+        return false;
+    }
+}
 function applyTeam(team, ele) {
     if (ele) {
         ele.innerHTML = '';
