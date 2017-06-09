@@ -7,6 +7,7 @@ const opn = require('opn');
 gulp.task('move', () => {
     gulp.src([
         './src/**/*.html',
+        './src/**/*.js',
         './src/**/*.gif',
         './src/**/*.png',
         './src/**/*.ico'
